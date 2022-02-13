@@ -3,7 +3,7 @@ import '../../css/main.css'
 
 const ItemListContainer = ({name}) => {
     return (
-        <main className='container'>
+        <main>
             <h1 className='font-bold text-4xl title'>¡Bienvenido {name}!</h1>
         </main>
     )
