@@ -1,15 +1,15 @@
-const mensaje = 'Bienvenidos a React !!!'
-const styles = {color: 'orange'}
+import NavBar from "./components/NavBar"
+import ItemListContainer from './components/ItemListContainer'
+import './css/base.css'
 
-function App() {
+const usuario = 'Coders'
+
+
+const App = () => {
   return (
     <>
-      <h1>{mensaje}</h1>
-      <ul>
-        <li style={styles}>React</li>
-        <li>JSX</li>
-        <li>WebPack</li>
-      </ul>
+      <NavBar />
+      <ItemListContainer name={usuario} />
     </>
   );
 }
