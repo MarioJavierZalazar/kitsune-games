@@ -1,21 +1,15 @@
 import React from 'react'
-import logo from '../assets/img/logo.jpg'
-import '../css/header.css'
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {faBasketShopping} from "@fortawesome/free-solid-svg-icons";
+import Logo from '../utilities/Logo'
+import CartWidget from '../utilities/CartWidget'
+import '../../css/header.css'
+
 
 const NavBar = () => {
     return (
         <header className='container mx-auto'>
             <div className='flex justify-between'>
-                <div className="header_logo p-4">
-                    <img src={logo} alt="logo"/>
-                </div>
-                <div className='cart my-auto'>
-                    <a href="#">
-                        <FontAwesomeIcon icon={faBasketShopping} />
-                    </a>
-                </div>
+                <Logo />
+                <CartWidget />
             </div>
             <nav className='container navBar'>
                 <ul className='flex justify-around'>
