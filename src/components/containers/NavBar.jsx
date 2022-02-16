@@ -9,7 +9,6 @@ const NavBar = () => {
         <header>
             <div className='flex justify-between px-5'>
                 <Logo />
-                <CartWidget />
             </div>
             <nav className='navBar'>
                 <ul className='flex justify-around'>
@@ -17,6 +16,8 @@ const NavBar = () => {
                     <li className='justify-self-auto'><a href="#">Consolas</a></li>
                     <li className='justify-self-auto'><a href="#">Juegos</a></li>
                     <li className='justify-self-auto'><a href="#">Contacto</a></li>
+                    <li className='justify-self-auto'><a href="#">Login</a></li>
+                    <li className='justify-self-auto'><CartWidget /></li>
                 </ul>
             </nav>
         </header>

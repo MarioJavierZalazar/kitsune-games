@@ -7,15 +7,11 @@
 }
 
 .cart {
-    background-color: orange;
-    padding: 10px;
-    font-size: 1.25rem;
-    border-radius: 15px;
-    margin-right: 5%;
     color: #fff;
 }
 
 .navBar {
     background-color: #ea8223;
     color: #fff;
+    font-size: 1.25rem;
 }
