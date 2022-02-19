@@ -12,11 +12,11 @@ const NavBar = () => {
             </div>
             <nav className='navBar'>
                 <ul className='flex justify-around'>
-                    <li className='justify-self-auto'><a href="#">Inicio</a></li>
-                    <li className='justify-self-auto'><a href="#">Consolas</a></li>
-                    <li className='justify-self-auto'><a href="#">Juegos</a></li>
-                    <li className='justify-self-auto'><a href="#">Contacto</a></li>
-                    <li className='justify-self-auto'><a href="#">Login</a></li>
+                    <li className='justify-self-auto'>Inicio</li>
+                    <li className='justify-self-auto'>Consolas</li>
+                    <li className='justify-self-auto'>Juegos</li>
+                    <li className='justify-self-auto'>Contacto</li>
+                    <li className='justify-self-auto'>Login</li>
                     <li className='justify-self-auto'><CartWidget /></li>
                 </ul>
             </nav>
