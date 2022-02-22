@@ -6,7 +6,7 @@ const ItemList = () => {
     const [products, setProducts] = useState([])
     
     useEffect( () => {
-        getProducts()
+        setTimeout(getProducts, 2000)
     }, [] )
 
     const getProducts = () =>{
