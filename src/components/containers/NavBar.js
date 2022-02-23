@@ -1,4 +1,3 @@
-import React from 'react'
 import Logo from '../utilities/Logo'
 import CartWidget from '../utilities/CartWidget'
 import '../../css/header.css'
@@ -10,7 +9,7 @@ const NavBar = () => {
             <div className='flex justify-between px-5'>
                 <Logo />
             </div>
-            <nav className='navBar'>
+            <nav className='navBar text-white text-lg uppercase'>
                 <ul className='flex justify-around'>
                     <li className='justify-self-auto'>Inicio</li>
                     <li className='justify-self-auto'>Consolas</li>

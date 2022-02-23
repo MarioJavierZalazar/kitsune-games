@@ -18,7 +18,7 @@ const ItemList = () => {
     }
 
   return (
-      <div className='itemContainer flex flex-wrap justify-around'>
+      <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3'>
           {products.map( p => <Item key={p.id} p={p} /> )}
       </div>
   )

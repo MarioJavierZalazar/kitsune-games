@@ -1,17 +1,3 @@
-.header_logo {
-    max-width: 500px;
-}
-
-.header_logo img {
-    max-width: 100%;
-}
-
-.cart {
-    color: #fff;
-}
-
 .navBar {
     background-color: #ea8223;
-    color: #fff;
-    font-size: 1.25rem;
 }

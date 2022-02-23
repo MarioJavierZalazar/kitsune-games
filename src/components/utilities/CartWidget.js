@@ -7,8 +7,9 @@ import {faBasketShopping} from "@fortawesome/free-solid-svg-icons";
 
 const CartWidget = () => {
   return (
-      <div className='cart my-auto'>
+      <div className='text-white my-auto'>
             <FontAwesomeIcon icon={faBasketShopping} />
+            <spam className='cartCounter text-xs'>0</spam>
       </div>
   )
 }
