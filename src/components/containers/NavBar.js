@@ -1,6 +1,8 @@
 import Logo from '../utilities/Logo'
 import CartWidget from '../utilities/CartWidget'
+
 import '../../css/header.css'
+import { NavLink } from 'react-router-dom'
 
 
 const NavBar = () => {
@@ -11,12 +13,11 @@ const NavBar = () => {
             </div>
             <nav className='navBar text-white text-lg uppercase'>
                 <ul className='flex justify-around'>
-                    <li className='justify-self-auto'>Inicio</li>
-                    <li className='justify-self-auto'>Consolas</li>
-                    <li className='justify-self-auto'>Juegos</li>
-                    <li className='justify-self-auto'>Contacto</li>
-                    <li className='justify-self-auto'>Login</li>
-                    <li className='justify-self-auto'><CartWidget /></li>
+                    <li className='justify-self-auto'> <NavLink to='/'>Home</NavLink></li>
+                    <li className='justify-self-auto'> <NavLink to='/productos'>Productos</NavLink></li>
+                    <li className='justify-self-auto'> <NavLink to='/contacto'> Contacto</NavLink></li>
+                    <li className='justify-self-auto'> <NavLink to='/login'> Login</NavLink></li>
+                    <li className='justify-self-auto'> <NavLink to='/carrito'> <CartWidget /></NavLink></li>
                 </ul>
             </nav>
         </header>

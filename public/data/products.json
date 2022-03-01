@@ -4,6 +4,7 @@
         "title": "Nintendo Swicth Oled",
         "description": "Con tu consola Switch tendrás entretenimiento asegurado todos los días. Su tecnología fue creada para poner nuevos retos tanto a jugadores principiantes como expertos.",
         "price":  95000,
+        "tag": "consola",
         "picture":  "./img/nintendoSwcheOled.jpg"
     },
     {
@@ -11,6 +12,7 @@
         "title": "Playstation 5",
         "description": "Con tu consola Sony PlayStation tendrás entretenimiento asegurado todos los días. Su tecnología fue creada para poner nuevos retos tanto a jugadores principiantes como expertos.",
         "price":  120000,
+        "tag": "consola",
         "picture":  "./img/ps5.png"
     },
     {
@@ -18,6 +20,7 @@
         "title": "Mortal Kombat 11",
         "description": "Mortal Kombat 11 es un videojuego de lucha desarrollado por NetherRealm Studios y publicado por Warner Bros. Interactive Entertainment.",
         "price":  7500,
+        "tag": "juego",
         "picture":  "./img/mk11PLay5.jpg"
     },
     {
@@ -25,6 +28,7 @@
         "title": "Pokemon Arceus",
         "description": "Leyendas Pokémon: Arceus es un videojuego de rol de acción desarrollado por Game Freak y publicado por The Pokémon Company y Nintendo para Nintendo Switch.",
         "price":  9000,
+        "tag": "juego",
         "picture":  "./img/pokemonArceusNintendoSw.jpg"
     },
     {
@@ -32,6 +36,7 @@
         "title": "Pokemon Sword",
         "description": "Pokémon Espada, conocido en Japón como Pocket Monsters Sword, es un videojuego de rol desarrollados por Game Freak y publicados por Nintendo y The Pokémon Company para Nintendo Switch.",
         "price":  7500,
+        "tag": "juego",
         "picture":  "./img/pokemonSwordNintendoSw.jpg"
     },
     {
@@ -39,6 +44,7 @@
         "title": "Spider-Man",
         "description": "Marvel's Spider-Man: Miles Morales es un videojuego de acción y aventuras desarrollado por Insomniac Games y publicado por Sony Interactive Entertainment PlayStation 5.",
         "price":  12000,
+        "tag": "juego",
         "picture":  "./img/spidermanPlay5.jpg"
     }
 

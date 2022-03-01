@@ -1,12 +1,17 @@
 
-.cardTitle {
+.cardTitle,
+.cardPrice,
+.detailTitle,
+.detailPrice {
     color: #ea8223;
 }
 
-.cardPrice {
+.cardDetalle,
+.detailAdd {
     background-color: rgba(234, 130, 35, 1)
 }
 
-.cardPrice:hover {
+.cardDetalle:hover,
+.detailAdd:hover {
     background-color: rgba(234, 130, 35, 0.8)
 }

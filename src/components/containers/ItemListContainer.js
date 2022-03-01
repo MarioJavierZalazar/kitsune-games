@@ -1,10 +1,10 @@
-import ItemList from './ItemList';
+import ItemList from './ItemList'
 
-const ItemListContainer = () => {
+const ItemListContainer = ( {title} ) => {
 
     return (
         <section className='container mb-5 mx-auto'>
-            <h1 className='font-bold text-4xl text-center title my-5'>Lista de productos</h1>
+            <h1 className='font-bold text-4xl text-center title my-5'>{title}</h1>
             <ItemList />
         </section>
     )
