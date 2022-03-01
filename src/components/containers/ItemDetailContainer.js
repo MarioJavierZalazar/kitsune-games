@@ -2,6 +2,7 @@ import {useEffect, useState} from 'react'
 import { useParams } from "react-router-dom";
 import ItemDetail from '../utilities/ItemDetail'
 import SpinerLoading from '../utilities/SpinerLoading';
+import Error404 from './Error404';
 const ItemDetailContainer = () => {
     const [item, setItems] = useState([])
     const [hiddenSpiner, setsHiddenSpiner] = useState('block')
@@ -26,7 +27,11 @@ const ItemDetailContainer = () => {
                 <SpinerLoading />
             </div>
             <div className={showItems}>
-                <ItemDetail product={item}/>
+                {item ?
+                    <ItemDetail product={item}/>
+                : 
+                    <Error404 origin={'product'}/>
+                }
             </div>
         </div>
     )

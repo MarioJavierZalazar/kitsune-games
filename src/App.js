@@ -7,6 +7,10 @@ import ItemDetailContainer from './components/containers/ItemDetailContainer'
 import HomeContainer from './components/containers/HomeContainer'
 
 import './css/base.css'
+import ContactoContainer from './components/containers/ContactoContainer'
+import LoginContainer from './components/containers/LoginContainer'
+import CarritoContainer from './components/containers/CarritoContainer'
+import Error404 from './components/containers/Error404'
 
 
 const App = () => {
@@ -15,12 +19,13 @@ const App = () => {
       <NavBar />
       <main>
         <Routes>
-          <Route path='/' element={<HomeContainer title={'Inicio'}/>}/>
+          <Route path='*' element={<Error404/>}/>
+          <Route path='/' element={<HomeContainer/>}/>
           <Route path='/productos' element={<ItemListContainer title={'Todos los productos'}/>}/>
           <Route path='/productos/:id' element={<ItemDetailContainer/>}/>  
-          <Route path='/contacto' element={<ItemListContainer title={'Contacto'}/>}/>
-          <Route path='/login' element={<ItemListContainer title={'Login'}/>}/>
-          <Route path='/carrito' element={<ItemListContainer title={'Carrito'}/>}/>
+          <Route path='/contacto' element={<ContactoContainer/>}/>
+          <Route path='/login' element={<LoginContainer/>}/>
+          <Route path='/carrito' element={<CarritoContainer/>}/>
         </Routes>
       </main>
       <Footer />

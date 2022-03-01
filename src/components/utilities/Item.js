@@ -8,7 +8,7 @@ const Item = ( {p} ) => {
             <img className='object-contain w-48 h-48' src={p.picture} alt={p.title} />
         </div>
         <div className="cardbody">
-          <div className='flex flex-wrap justify-between	'>
+          <div className='flex flex-wrap justify-between'>
             <h4 className='cardTitle font-bold uppercase'>{p.title}</h4>
             <p className='cardPrice font-bold'>$ {p.price}</p>
           </div>

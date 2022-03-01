@@ -14,7 +14,7 @@ const NavBar = () => {
             <nav className='navBar text-white text-lg uppercase'>
                 <ul className='flex justify-around'>
                     <li className='justify-self-auto'> <NavLink to='/'>Home</NavLink></li>
-                    <li className='justify-self-auto'> <NavLink to='/productos'>Productos</NavLink></li>
+                    <li className='justify-self-auto'> <NavLink to='/productos'>Catalogo</NavLink></li>
                     <li className='justify-self-auto'> <NavLink to='/contacto'> Contacto</NavLink></li>
                     <li className='justify-self-auto'> <NavLink to='/login'> Login</NavLink></li>
                     <li className='justify-self-auto'> <NavLink to='/carrito'> <CartWidget /></NavLink></li>

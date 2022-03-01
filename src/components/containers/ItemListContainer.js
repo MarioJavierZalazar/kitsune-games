@@ -4,7 +4,7 @@ const ItemListContainer = ( {title} ) => {
 
     return (
         <section className='container mb-5 mx-auto'>
-            <h1 className='font-bold text-4xl text-center title my-5'>{title}</h1>
+            <h2 className='title uppercase text-5xl m-12 font-bold text-center'>Catálogo</h2>
             <ItemList />
         </section>
     )
