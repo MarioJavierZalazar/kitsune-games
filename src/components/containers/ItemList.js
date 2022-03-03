@@ -5,6 +5,7 @@ import SpinerLoading from '../utilities/SpinerLoading'
 const ItemList = ( ) => {
     const [hiddenSpiner, setsHiddenSpiner] = useState('block')
     const [products, setProducts] = useState([])
+    const [productsFilter, setProductsFilter] = useState([])
     
     useEffect( () => {
         setTimeout(getProducts, 2000)
@@ -17,13 +18,31 @@ const ItemList = ( ) => {
         })
         setsHiddenSpiner('hidden')
     }
+    const setConsolas = () => {
+      return setProductsFilter(products.filter(tag => tag.tag === 'consola'))
+    }
+    const setJuegos = () => {
+    return setProductsFilter(products.filter(tag => tag.tag === 'juego'))
+    }
+    const setTodo = () => {
+    return setProductsFilter(products)
+    }
+    
   return (
       <>
         <div className={hiddenSpiner}>
             <SpinerLoading />
         </div>
+        <div className='text-2xl font-bold text-center'>
+          <p className='title inline-block mr-4'>Filtros:</p>
+          <button className='mx-6 p-2 active:underline' onClick={setConsolas}>Consolas</button>
+          <button className='mx-6 p-2 active:underline' onClick={setJuegos}>Juegos</button>
+          <button className='mx-6 p-2 active:underline' onClick={setTodo}>Todo</button>
+        </div>
         <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3'>
-          {products.map( p => <Item key={p.id} p={p} /> )}
+          {productsFilter.length > 0 ? 
+          productsFilter.map( p => <Item key={p.id} p={p} />)
+          : products.map( p => <Item key={p.id} p={p} />)}
         </div>
       </>
   )
