@@ -9,7 +9,7 @@ const CartWidget = () => {
   return (
       <div className='text-white my-auto'>
             <FontAwesomeIcon icon={faBasketShopping} />
-            <spam className='cartCounter font-bold text-sm text-white'>0</spam>
+            <span className='cartCounter font-bold text-sm text-white'>0</span>
       </div>
   )
 }
