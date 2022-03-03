@@ -21,7 +21,7 @@ const App = () => {
         <Routes>
           <Route path='*' element={<Error404/>}/>
           <Route path='/' element={<HomeContainer/>}/>
-          <Route path='/productos' element={<ItemListContainer title={'Todos los productos'}/>}/>
+          <Route path='/productos' element={<ItemListContainer/>}/>
           <Route path='/productos/:id' element={<ItemDetailContainer/>}/>  
           <Route path='/contacto' element={<ContactoContainer/>}/>
           <Route path='/login' element={<LoginContainer/>}/>
