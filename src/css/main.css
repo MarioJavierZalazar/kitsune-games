@@ -9,3 +9,12 @@
 .formBtn:hover {
     background-color: rgba(234, 130, 35, 0.8)
 }
+
+.filter {
+    background-color: rgb(226 232 240);
+    color: #000;
+}
+.filterActive {
+    background-color: #ea8223;
+    color:#fff;
+}

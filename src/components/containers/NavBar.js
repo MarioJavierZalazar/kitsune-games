@@ -11,7 +11,7 @@ const NavBar = () => {
             <div className='flex justify-between px-5'>
                 <Logo />
             </div>
-            <nav className='navBar text-white text-lg uppercase'>
+            <nav className='navBar text-white text-lg uppercase py-2'>
                 <ul className='flex justify-around'>
                     <li className='justify-self-auto'> <Link to='/'>Home</Link></li>
                     <li className='justify-self-auto'> <Link to='/productos'>Catalogo</Link></li>
