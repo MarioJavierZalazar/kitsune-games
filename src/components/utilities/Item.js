@@ -12,12 +12,11 @@ const Item = ( {p} ) => {
             <h4 className='cardTitle font-bold uppercase'>{p.title}</h4>
             <p className='cardPrice font-bold'>$ {p.price}</p>
           </div>
-            <p className='h-20 m-2.5 italic'>{p.description}</p>
-            <div className='cardDetalle w-40 text-center my-2.5 mx-auto rounded-3xl py-1.5 px-5 text-white border-solid border-2 border-black'>
-              <NavLink to={`/productos/${p.id}`}>Ver detalles</NavLink>
-            </div>
+          <p className='h-20 m-2.5 italic'>{p.description}</p>
+          <div className='cardDetalle w-40 text-center my-2.5 mx-auto rounded-3xl py-1.5 px-5 text-white border-solid border-2 border-black'>
+            <NavLink to={`/productos/${p.id}`}>Ver detalles</NavLink>
+          </div>
         </div>
-        
     </div>
   )
 }
