@@ -7,7 +7,7 @@ En la cual esta confomada por una pagina de inicio, que nos redirecciona al cata
 
 ## Tecnologias usadas
 
-React | Tailwindcss | React-Router-Dom
+React | Tailwindcss | React-Router-Dom | FontAwsome
 
 
 ### Como usar este código:

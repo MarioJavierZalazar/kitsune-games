@@ -2,11 +2,13 @@
     color: #ea8223;
 }
 
-.formBtn {
+.formBtn,
+.btn-Primario {
     background-color: rgba(234, 130, 35, 1)
 }
 
-.formBtn:hover {
+.formBtn:hover,
+.btn-Primario:hover {
     background-color: rgba(234, 130, 35, 0.8)
 }
 
