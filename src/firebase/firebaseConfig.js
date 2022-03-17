@@ -6,12 +6,12 @@ import { getFirestore } from "firebase/firestore";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
-  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
-  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
-  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
-  appId: process.env.REACT_APP_FIREBASE_APP_ID
+  apiKey: "AIzaSyBUYPe3lM1F52gC72Dypkl7eFm3UvMzx7E",
+  authDomain: "kitsune-games.firebaseapp.com",
+  projectId: "kitsune-games",
+  storageBucket: "kitsune-games.appspot.com",
+  messagingSenderId: "1068950904335",
+  appId: "1:1068950904335:web:6c45b9aca6bc94323d0d7a"
 };
 
 // Initialize Firebase
