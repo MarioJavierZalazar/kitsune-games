@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from 'react'
+import React, { useContext } from 'react'
 import { CarritoContext } from "../context/CarritoContext"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
@@ -6,11 +6,6 @@ import { faXmark } from "@fortawesome/free-solid-svg-icons";
 const CarritoDetail = () => {
   //Hooks
   const { carrito, clearCart, removeProduct, carritoTotal } = useContext(CarritoContext)
-  const [carritoProduct, setCarritoProduct] = useState(carrito)
-
-  useEffect(() => {
-    setCarritoProduct(carrito)
-  }, [carrito])
 
   // Funciones
   const formatter = new Intl.NumberFormat('en-US', {
@@ -25,9 +20,9 @@ const CarritoDetail = () => {
     <div>
         <div className='flex justify-center'>
           <div>
-            {carritoProduct.map(product =>
+            {carrito.map(product =>
               <div key={product.id} className="flex flex-col items-center bg-white rounded-lg border shadow-md md:flex-row m-10">
-                <img className="object-cover w-full h-96 rounded-t-lg md:h-auto md:w-48 md:rounded-none md:rounded-l-lg" src={`.${product.picture}`} alt="" />
+                <img className="object-cover w-full h-96 rounded-t-lg md:h-auto md:w-48 md:rounded-none md:rounded-l-lg" src={`../img/${product.picture}`} alt="" />
                 <div className="flex flex-col justify-between p-4 leading-normal">
                   <h5 className="mb-2 text-2xl font-bold text-gray-900">{product.title}</h5>
                   <div className='flex justify-around items-center'>

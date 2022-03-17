@@ -29,7 +29,7 @@ const ItemDetail = ({ product }) => {
       <h2 className="detailTitle text-center text-7xl my-12">{product.title}</h2>
       <div className="flex flex-wrap justify-around">
         <div className="mx-auto w-1/3 my-5">
-          <img className="object-contain max-h-96 mx-auto" src={`.${product.picture}`} alt={product.title}></img>
+          <img className="object-contain max-h-96 mx-auto" src={`../img/${product.picture}`} alt={product.title}></img>
         </div>
         <div className="mx-auto w-1/3">
           <p className="my-7 text-2xl">{product.description}</p>

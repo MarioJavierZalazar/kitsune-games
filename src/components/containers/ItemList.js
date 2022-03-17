@@ -1,62 +1,55 @@
 import { useEffect, useState } from 'react'
 import Item from "../utilities/Item"
 import SpinerLoading from '../utilities/SpinerLoading'
+import db from '../../firebase/firebaseConfig'
+import { collection, onSnapshot, query, where } from 'firebase/firestore'
 
-const ItemList = ( ) => {
-    const [hiddenSpiner, setsHiddenSpiner] = useState('block')
-    const [products, setProducts] = useState([])
-    const [productsFilter, setProductsFilter] = useState([])
-    const [value, setvalue] = useState(false)
-    const [value2, setvalue2] = useState(false)
-    const [value3, setvalue3] = useState(true)
-    
-    useEffect( () => {
-        setTimeout(getProducts, 2000)
-    }, [] )
+const ItemList = () => {
+  const [hiddenSpiner, setsHiddenSpiner] = useState('block')
+  const [products, setProducts] = useState([])
 
-    const getProducts = () =>{
-        const URL = 'https://6214354489fad53b1f0d838c.mockapi.io/Productos'
-        fetch(URL).then( respuesta => respuesta.json() ).then( json => {
-           setProducts(json)
+  useEffect(() => {
+    onSnapshot(
+      collection(db, 'products'),
+      (snapshot) => {
+        const arrProducts = snapshot.docs.map(doc => {
+          return { ...doc.data() }
         })
-        setsHiddenSpiner('hidden')
-    }
-    const setConsolas = () => {
-      setvalue(true)
-      setvalue2(false)
-      setvalue3(false)
-      return setProductsFilter(products.filter(tag => tag.tag === 'consolas'))
-    }
-    const setJuegos = () => {
-      setvalue(false)
-      setvalue2(true)
-      setvalue3(false)
-    return setProductsFilter(products.filter(tag => tag.tag === 'juegos'))
-    }
-    const setTodo = () => {
-      setvalue(false)
-      setvalue2(false)
-      setvalue3(true)
-    return setProductsFilter(products)
-    }
-    
+        setProducts(arrProducts);
+      }, (error) => { console.log(error) }
+    )
+    setsHiddenSpiner('hidden')
+  }, []);
+
+  const setFilter = (e) => {
+    let filterTag = e.target.value
+    const q = query(
+      collection(db, 'products'),
+      where('tag', '==', filterTag)
+    );
+    onSnapshot(q,
+      (snapshot) => {
+        const arrProducts = snapshot.docs.map(doc => {
+          return { ...doc.data() }
+        })
+        setProducts(arrProducts);
+      }, (error) => { console.log(error) })
+  }
+
   return (
-      <>
-        <div className='text-2xl font-bold text-center'>
-          <p className='title inline-block mr-4'>Filtros:</p>
-          <button className={`mx-6 p-2 rounded-3xl py-1.5 px-5 border-solid border-2 border-black ${value3 ? 'filterActive' : 'filter'}`} onClick={setTodo}>Todo</button>
-          <button className={`mx-6 p-2 font-bold rounded-3xl py-1.5 px-5 border-solid border-2 border-black ${value ? 'filterActive' : 'filter'}`} onClick={setConsolas}>Consolas</button>
-          <button className={`mx-6 p-2 font-bold rounded-3xl py-1.5 px-5 border-solid border-2 border-black ${value2 ? 'filterActive' : 'filter'}`} onClick={setJuegos}>Juegos</button>
-        </div>
-        <div className={hiddenSpiner}>
-            <SpinerLoading />
-        </div>
-        <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3'>
-          {productsFilter.length > 0 ? 
-          productsFilter.map( p => <Item key={p.id} p={p} />)
-          : products.map( p => <Item key={p.id} p={p} />)}
-        </div>
-      </>
+    <>
+      <div className='text-2xl font-bold text-center'>
+        <p className='title inline-block mr-4'>Filtros:</p>
+        <button value='consolas' className={`mx-6 p-2 font-bold rounded-3xl py-1.5 px-5 border-solid border-2 border-black`} onClick={setFilter}>Consolas</button>
+        <button value='juegos' className={`mx-6 p-2 font-bold rounded-3xl py-1.5 px-5 border-solid border-2 border-black`} onClick={setFilter}>Juegos</button>
+      </div>
+      <div className={hiddenSpiner}>
+        <SpinerLoading />
+      </div>
+      <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3'>
+        {products.map(p => <Item key={p.id} p={p} />)}
+      </div>
+    </>
   )
 }
 
