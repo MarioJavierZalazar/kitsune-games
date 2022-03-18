@@ -4,7 +4,7 @@ import ItemDetail from '../utilities/ItemDetail'
 import SpinerLoading from '../utilities/SpinerLoading';
 import Error404 from './Error404';
 import db from '../../firebase/firebaseConfig'
-import { collection, onSnapshot, query, where } from 'firebase/firestore'
+import { doc, getDoc} from 'firebase/firestore'
 
 const ItemDetailContainer = () => {
     const [products, setProducts] = useState([])
@@ -12,17 +12,10 @@ const ItemDetailContainer = () => {
     const [showItems, setShowItems] = useState('hidden')
     const { id } = useParams()
     useEffect(() => {
-        const q = query(
-            collection(db, 'products'),
-            where('id', '==', id)
-            );
-        onSnapshot(q,
-            (snapshot) => {
-                const arrProducts = snapshot.docs.map(doc => {
-                    return {...doc.data()}
-                })
-                setProducts(arrProducts[0]);
-            }, (error) => {console.log(error)})
+        const docRef = doc(db, 'products', `${id}`)
+        const docSnap = getDoc(docRef)
+
+        docSnap.then(r => setProducts(r.data()))
              
         setShowItems('block')
         setsHiddenSpiner('hidden')
