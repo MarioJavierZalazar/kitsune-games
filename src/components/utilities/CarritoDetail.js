@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import { CarritoContext } from "../context/CarritoContext"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
+import { NavLink } from 'react-router-dom';
 
 const CarritoDetail = () => {
   //Hooks
@@ -39,7 +40,7 @@ const CarritoDetail = () => {
             </div>
             <div className='flex flex-col items-center'>
               <button className='bg-slate-400	hover:bg-slate-300 w-46 text-center my-2.5 mx-auto rounded-3xl py-1.5 px-5 text-slate-800 border-solid border-2 border-black font-bold'  onClick={clearCart}>Vaciar carrito</button>
-              <button className='btn-Primario w-46 text-center my-2.5 mx-auto rounded-3xl py-1.5 px-5 text-white border-solid border-2 border-black font-bold' >Finalizar compra</button>
+              <NavLink to='/carrito/finalizarOrden' className='btn-Primario w-46 text-center my-2.5 mx-auto rounded-3xl py-1.5 px-5 text-white border-solid border-2 border-black font-bold' >Finalizar compra</NavLink>
             </div>
           </div>
         </div>
