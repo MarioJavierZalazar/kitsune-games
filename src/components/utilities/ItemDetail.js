@@ -5,13 +5,14 @@ import { CarritoContext } from "../context/CarritoContext"
 
 const ItemDetail = ({ product }) => {
   //Hooks
+  console.log('render');
   const [cant, setCant] = useState(1);
   const { setProduct } = useContext(CarritoContext);
   const [isInCart, setIsInCart] = useState(false);
 
   //Funciones
   const addCant = () => {
-    if (cant < 10) setCant(cant + 1);
+    if (cant < product.stock) setCant(cant + 1);
   }
 
   const restCant = () => {
@@ -33,24 +34,29 @@ const ItemDetail = ({ product }) => {
         </div>
         <div className="mx-auto w-1/3">
           <p className="my-7 text-2xl">{product.description}</p>
+          <p className="my-7 text-2xl">Stock: {product.stock} Unidades</p>
           <div className="flex flex-wrap justify-around my-24">
             <p className="font-bold text-right text-3xl">Precio: </p>
             <p className="detailPrice font-bold text-right text-3xl">$ {product.price}</p>
           </div>
-          <div className="text-center">
-            {isInCart ?
-              <NavLink to='/carrito' className="detailAdd w-40 my-2.5 rounded-3xl py-1.5 px-5 text-white border-solid border-2 border-black">Terminar compra</NavLink>
-              :
-              <>
-                <div className="flex justify-center mb-4">
-                  <button className="px-2 border-2 bg-slate-200 rounded-md mx-2" onClick={restCant}> - </button>
-                  <p className="px-5 w-1/6">{cant}</p>
-                  <button className="px-2 border-2 bg-slate-200 rounded-md mx-2" onClick={addCant}> + </button>
-                </div>
-                <button onClick={() => { addToCart(product, cant) }} className="detailAdd w-40 my-2.5 rounded-3xl py-1.5 px-5 text-white border-solid border-2 border-black">Añadir al carrito</button>
-              </>
-            }
-          </div>
+          {product.stock === 0 ?
+            <div><p className="detailPrice font-bold text-center text-3xl">Sin stock</p></div> 
+          :
+            <div className="text-center">
+              {isInCart ?
+                <NavLink to='/carrito' className="detailAdd w-40 my-2.5 rounded-3xl py-1.5 px-5 text-white border-solid border-2 border-black">Terminar compra</NavLink>
+                :
+                <>
+                  <div className="flex justify-center mb-4">
+                    <button className="px-2 border-2 bg-slate-200 rounded-md mx-2" onClick={restCant}> - </button>
+                    <p className="px-5 w-1/6">{cant}</p>
+                    <button className="px-2 border-2 bg-slate-200 rounded-md mx-2" onClick={addCant}> + </button>
+                  </div>
+                  <button onClick={() => { addToCart(product, cant) }} className="detailAdd w-40 my-2.5 rounded-3xl py-1.5 px-5 text-white border-solid border-2 border-black">Añadir al carrito</button>
+                </>
+              }
+            </div>
+          }
         </div>
       </div>
     </div>

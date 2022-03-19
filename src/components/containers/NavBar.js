@@ -16,7 +16,6 @@ const NavBar = () => {
                     <li className='justify-self-auto'> <Link to='/'>Home</Link></li>
                     <li className='justify-self-auto'> <Link to='/productos'>Catalogo</Link></li>
                     <li className='justify-self-auto'> <Link to='/contacto'> Contacto</Link></li>
-                    <li className='justify-self-auto'> <Link to='/login'> Login</Link></li>
                     <li className='justify-self-auto'> <Link to='/carrito'> <CartWidget /></Link></li>
                 </ul>
             </nav>

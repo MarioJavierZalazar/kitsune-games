@@ -8,7 +8,6 @@ import HomeContainer from './components/containers/HomeContainer'
 
 import './css/base.css'
 import ContactoContainer from './components/containers/ContactoContainer'
-import LoginContainer from './components/containers/LoginContainer'
 import CarritoContainer from './components/containers/CarritoContainer'
 import Error404 from './components/containers/Error404'
 
@@ -24,7 +23,6 @@ const App = () => {
           <Route path='/productos' element={<ItemListContainer/>}/>
           <Route path='/productos/:id' element={<ItemDetailContainer/>}/>  
           <Route path='/contacto' element={<ContactoContainer/>}/>
-          <Route path='/login' element={<LoginContainer/>}/>
           <Route path='/carrito' element={<CarritoContainer/>}/>
         </Routes>
       </main>
