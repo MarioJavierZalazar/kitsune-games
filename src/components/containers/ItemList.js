@@ -4,25 +4,36 @@ import SpinerLoading from '../utilities/SpinerLoading'
 import db from '../../firebase/firebaseConfig'
 import { collection, onSnapshot, query, where } from 'firebase/firestore'
 
-const ItemList = () => {
+const ItemList = ({tag}) => {
+  //hooks
   const [hiddenSpiner, setsHiddenSpiner] = useState('block')
   const [products, setProducts] = useState([])
 
   useEffect(() => {
-    onSnapshot(
-      collection(db, 'products'),
-      (snapshot) => {
-        const arrProducts = snapshot.docs.map(doc => {
-          return { ...doc.data() }
-        })
-        setProducts(arrProducts);
-      }, (error) => { console.log(error) }
-    )
-    setsHiddenSpiner('hidden')
-  }, []);
+    switch (tag) {
+      case 'consolas': setFilter(tag);
+        break;
+      case 'juegos': setFilter(tag);
+        break;
+    
+      default:
+        onSnapshot(
+          collection(db, 'products'),
+          (snapshot) => {
+            const arrProducts = snapshot.docs.map(doc => {
+              return { ...doc.data() }
+            })
+            setProducts(arrProducts);
+          }, (error) => { console.log(error) }
+        )
 
-  const setFilter = (e) => {
-    let filterTag = e.target.value
+        break;
+    }
+    setsHiddenSpiner('hidden')
+  }, [tag]);
+
+  //Funciones
+  const setFilter = (filterTag) => {
     const q = query(
       collection(db, 'products'),
       where('tag', '==', filterTag)
@@ -38,11 +49,6 @@ const ItemList = () => {
 
   return (
     <>
-      <div className='text-2xl font-bold text-center'>
-        <p className='title inline-block mr-4'>Filtros:</p>
-        <button value='consolas' className={`mx-6 p-2 font-bold rounded-3xl py-1.5 px-5 border-solid border-2 border-black`} onClick={setFilter}>Consolas</button>
-        <button value='juegos' className={`mx-6 p-2 font-bold rounded-3xl py-1.5 px-5 border-solid border-2 border-black`} onClick={setFilter}>Juegos</button>
-      </div>
       <div className={hiddenSpiner}>
         <SpinerLoading />
       </div>
