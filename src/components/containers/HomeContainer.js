@@ -8,7 +8,6 @@ const HomeContainer = () => {
       <HomeTitle/>
       <div className="flex flex-warp justify-center my-12">
         <HomeWidget acction={'ver catalogo'} picture={'foxCatalogo.jpg'} to={'/productos'}/>
-        <HomeWidget acction={'ir a Contacto'} picture={'foxLogin2.png'} to={'/contacto'}/>
       </div>
     </div>
   )

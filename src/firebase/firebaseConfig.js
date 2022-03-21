@@ -1,10 +1,6 @@
-// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getFirestore } from "firebase/firestore";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+import { collection, getFirestore } from "firebase/firestore";
 
-// Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyBUYPe3lM1F52gC72Dypkl7eFm3UvMzx7E",
   authDomain: "kitsune-games.firebaseapp.com",
@@ -17,5 +13,7 @@ const firebaseConfig = {
 // Initialize Firebase
 initializeApp(firebaseConfig);
 const db = getFirestore();
+export const productsCollection = collection(db, 'products')
+export const orderCollection = collection(db, 'ordenes')
 
 export default db;

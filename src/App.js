@@ -5,7 +5,6 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import ItemDetailContainer from './components/containers/ItemDetailContainer'
 import HomeContainer from './components/containers/HomeContainer'
 import './css/base.css'
-import ContactoContainer from './components/containers/ContactoContainer'
 import CarritoContainer from './components/containers/CarritoContainer'
 import Error404 from './components/containers/Error404'
 import OrdenDeCompra from './components/utilities/OrdenDeCompra'
@@ -22,8 +21,7 @@ const App = () => {
           <Route path='/productos' element={<ItemListContainer tag='catalogo' />}/>
           <Route path='/consolas' element={<ItemListContainer tag='consolas'/>}/>
           <Route path='/juegos' element={<ItemListContainer tag='juegos'/>}/>
-          <Route path='/productos/:id' element={<ItemDetailContainer/>}/>  
-          <Route path='/contacto' element={<ContactoContainer/>}/>
+          <Route path='/productos/:id' element={<ItemDetailContainer/>}/>
           <Route path='/carrito' element={<CarritoContainer/>}/>
           <Route path='/carrito/finalizarOrden' element={<OrdenDeCompra/>}/>
         </Routes>

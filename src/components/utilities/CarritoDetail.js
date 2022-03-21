@@ -15,8 +15,6 @@ const CarritoDetail = () => {
     minimumFractionDigits: 0
   })
 
-
-  //Render
   return (
     <div>
         <div className='flex justify-center'>

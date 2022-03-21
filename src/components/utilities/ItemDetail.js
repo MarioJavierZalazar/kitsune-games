@@ -24,7 +24,6 @@ const ItemDetail = ({ product }) => {
     setIsInCart(true)
   }
 
-  //Render
   return (
     <div>
       <h2 className="detailTitle text-center text-7xl my-12">{product.title}</h2>

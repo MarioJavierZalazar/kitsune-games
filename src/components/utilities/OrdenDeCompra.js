@@ -7,7 +7,7 @@ import { addDoc, collection } from 'firebase/firestore'
 
 const OrdenDeCompra = () => {
   // Contextos
-  const { carrito, clearCart } = useContext(CarritoContext);
+  const { carrito, clearCart, carritoTotal } = useContext(CarritoContext);
 
   // Hooks
   const [buyerData, setBuyerData] = useState({})
@@ -34,7 +34,8 @@ const OrdenDeCompra = () => {
         buyerEmail: buyerData.buyerEmail,
         buyerTel: buyerData.buyerTel
       },
-      items: carrito
+      items: carrito,
+      total: carritoTotal
     });
 
     newOrderList.then(data => setOrderId(data.id));
@@ -42,7 +43,6 @@ const OrdenDeCompra = () => {
     setOrdenEmitida(true);
 
   }
-
 
   return (
     <div className='text-center'>
@@ -59,20 +59,20 @@ const OrdenDeCompra = () => {
           <>
             <h2 className='title uppercase text-5xl m-12 font-bold text-center'>Finalizar compra</h2>
             <p className='text-xl mb-12'>Para finalizar su compra, favor de completar los siguentes campos. Al finalizar, se le indicara el codigo de compra con el cual podra hacer el seguimiento.</p>
-            <form className='mx-auto' onSubmit={handleSubmit}>
-              <div>
+            <form className='mx-auto w-1/4' onSubmit={handleSubmit}>
+              <div className='m-10'>
                 <label htmlFor="buyerNombre">Indique su nombre:</label>
                 <input type='text' name="buyerNombre" autoFocus id="buyerNombre" className="bg-slate-100 mx-4 w-96 px-2 rounded-xl" onChange={handleInput} />
               </div>
-              <div>
+              <div className='m-10'>
                 <label htmlFor="buyerEmail">Indique su correo electronico:</label>
                 <input type='email' name="buyerEmail" id="buyerEmail" className="bg-slate-100 mx-4 w-96 px-2 rounded-xl" placeholder="correo@correo.com" onChange={handleInput} />
               </div>
-              <div>
+              <div className='m-10'>
                 <label htmlFor="buyerTel">Indique su teléfono:</label>
                 <input type='text' name="buyerTel" id="buyerTel" className="bg-slate-100 mx-4 w-96 px-2 rounded-xl" onChange={handleInput} />
               </div>
-              <button type='submit'>Realizar compra</button>
+              <button type='submit' className='bg-orange-500 hover:bg-orange-400 w-46 text-center my-2.5 mx-auto rounded-3xl py-1.5 px-5 text-white border-solid border-2 border-black font-bold'>Realizar compra</button>
             </form>
           </>
       }
